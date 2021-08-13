@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+        <script src="https://openlayers.org/api/OpenLayers.js"></script>
+        <script>
+          function init() {
+            map = new OpenLayers.Map("basicMap");
+            var mapnik = new OpenLayers.Layer.OSM();
+            map.addLayer(mapnik);
+            map.setCenter(new OpenLayers.LonLat(10,53.553) // Center of the map
+              .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+              ), 16 // Zoom level
+            );
+          }
+        </script>
+      </head>
+      <body onload="init();">
+        <nav>
+          <h1 id="logo">VeloCity</h1>
+          <ul>
+            <li>Your rents</li>
+            <li>Renting Histoty</li>
+            <li>Your Bikes</li>
+            <li>Sharing History</li>
+            <li>FAQ</li>
+            <li>Terms of Conditions</li>
+            <li>About</li>
+          </ul>
+        </nav>
+        <div id="basicMap"></div>
+        <div class="account" id="register">Register</div>
+        <div class="account" id="login">Login</div>
+        <div id="search">
+          <input id="searchInput" type="text" placeholder="Where are you?">
+          <img id="lupe" src="lupe.png" alt="search">
+        </div>
+                
+        <!-- Beginn der Userabfrage, Werte können später von Python ausgelesen werden-->
+
+        <div class="window">
+          <form action="user.html" method="GET">
+            Username: <br>
+            <input placeholder="username" type="text"><br><br>
+            Password: <br>
+            <input placeholder="password" type="text"><br><br>
+            <input type="submit">
+          </form>
+        </div>
+
+        <!-- Ende der Userabfrage-->
+
+      </body>
+</html>
