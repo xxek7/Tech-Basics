@@ -31,4 +31,3 @@ def oldUser() :
 
 while status != "q":
     displayMenu()
-    

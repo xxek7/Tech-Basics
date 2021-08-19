@@ -2,7 +2,7 @@ users = {}
 status = ""
 
 def displayMenu():
-    status = input ("Are you registered user? y/n? Press q to quit")
+    status = input ("Are you registered user? y/n?")
     if status == "y":
         oldUser()
     elif status =="n":
