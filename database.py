@@ -6,23 +6,23 @@ conn = sqlite3.connect('users.db')
 c = conn.cursor()
 
 #create a table
-#c.execute("""CREATE TABLE users (
- #   first_name text,
-  #  last_name text,
-   # email text
-#)""")
+c.execute("""CREATE TABLE users (
+    first_name text,
+    last_name text,
+    email text
+)""")
 
-#many_users = [
- #               ('Johanna', 'Frank', 'frank@web.de'),
-  #              ('Bjarne', 'Voss', 'voss@web.de'),
-   #             ('Henrike', 'Bahr', 'bahr@web.de'),
-    #            ('Maurice', 'Heel', 'heel@web.de'),
-     #           ('Joni', 'Sierks', 'sierks@web.de'),
-      #          ('Jonny', 'Floeter', 'jojo@web.de')
+many_users = [
+                ('Johanna', 'Frank', 'frank@web.de'),
+                ('Bjarne', 'Voss', 'voss@web.de'),
+                ('Henrike', 'Bahr', 'bahr@web.de'),
+                ('Maurice', 'Heel', 'heel@web.de'),
+                ('Joni', 'Sierks', 'sierks@web.de'),
+                ('Jonny', 'Floeter', 'jojo@web.de')
 
-         #   ] 
+            ] 
 
-#c.executemany("INSERT INTO users VALUES (?,?,?)", many_users)
+c.executemany("INSERT INTO users VALUES (?,?,?)", many_users)
 
 
 

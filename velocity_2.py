@@ -5,13 +5,16 @@ conn = sqlite3.connect('users_2.db')
 
 c = conn.cursor()
 
-c.execute("""CREATE TABLE users (
-    first_name text,
-    last_name text,
-    username text,
-    password text
-    )
-""")
+#--- First time running the code, the table gets created---
+
+#c.execute("""CREATE TABLE users (
+#    first_name text,
+#    last_name text,
+#    username text,
+#    password text,
+#    age integer
+#    )
+#""")
 
 conn.commit()
 
