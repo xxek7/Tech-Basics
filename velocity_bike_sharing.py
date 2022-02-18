@@ -1,5 +1,5 @@
 from os import close, stat
-import sqlite3, os
+import sqlite3, os, tkinter
 from sqlite3.dbapi2 import Cursor, connect
 
 with sqlite3.connect("user_data.db") as db:
@@ -137,11 +137,11 @@ def add_bike():
     with sqlite3.connect("user_bikes.db") as db:
         cursor = db.cursor()
 
-    type = input("what type is your bike?")
-    tire_size = input("please enter the tire size")
-    frame_size = input("please enter the frame size")
-    sex = input("please choose between 'male', 'female' or 'unisex'")
-    color = input("please enter the color of the bike")
+    type = input("what type is your bike? ")
+    tire_size = input("please enter the tire size ")
+    frame_size = input("please enter the frame size ")
+    sex = input("please choose between 'male', 'female' or 'unisex' ")
+    color = input("please enter the color of the bike ")
 
     bike = [ (type, tire_size, frame_size, sex, color) ]
                 
@@ -175,7 +175,5 @@ def show_bikes():
 
 
 menu()
-
-close
 
 db.close()
